@@ -5,6 +5,9 @@ Siribooru is a custom fork of MyImouto, specifically the Dec 21, 2021 ver of
 
 I am *trying to* patch it to PHP 8.2
 
+I (intend to because PHP is a bitch) use this to manage my 'collection'. In past I have used MyImouto for this, with PHP 5, but I made the foolish error of updating PHP.
+This setup (on my system) is just running on my LAN, and is just used for organising and centralising my photos.
+
 
 ## Setup (Windows):
 ### Git
