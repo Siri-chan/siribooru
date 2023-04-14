@@ -58,6 +58,7 @@ Create a database for your booru (the default expected name is myimouto). You ca
 ### Further Configuration
 You may want to change the database usernames and passwords in `config/database.yml`, and similarly configure the booru in `config/config.php`.
 You will need to create a user for the `myimouto` database you created in phpmyadmin, unless you used the default credentials of root with no password.
+The database might be set to development. YUou may need to change it to "production" in `config/boot.php`
 
 ### Finally setting up Siribooru
 Run `php setup.php`. Setup an admin account with username and password. You might need to comment/uncomment DB creation if it's commented
