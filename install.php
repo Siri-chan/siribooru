@@ -41,9 +41,9 @@ list($adminName, $adminPass) = getAdminData($c);
 $c->put("Database", null, Color::BLUE);
 
 # Install database
-#$c->write("Creating tables......");
-#$migrator->loadSchema();
-#$c->put('done');
+$c->write("Creating tables......");
+$migrator->loadSchema();
+$c->put('done');
 
 # Run migrations
 $c->write("Running migrations...");
