@@ -269,7 +269,7 @@ class User extends Rails\ActiveRecord\Base
         } else {
             $popular_tags = implode(', ', self::connection()->selectValues("SELECT id FROM tags WHERE tag_type = " . CONFIG()->tag_types['General'] . " ORDER BY post_count DESC LIMIT 8"));
             if ($popular_tags)
-                $popular_tags = "AND pt.tag_id NOT IN (${popular_tags})";
+                $popular_tags = "AND pt.tag_id NOT IN ({$popular_tags})";
         }
 
         if ($type) {
@@ -292,7 +292,7 @@ class User extends Rails\ActiveRecord\Base
                 FROM posts_tags pt, posts p
                 WHERE p.user_id = {$this->id}
                 AND p.id = pt.post_id
-                ${popular_tags}
+                {$popular_tags}
                 GROUP BY pt.tag_id
                 ORDER BY count DESC
                 LIMIT 6
@@ -321,7 +321,7 @@ class User extends Rails\ActiveRecord\Base
         } else {
             $popular_tags = implode(', ', self::connection()->selectValues("SELECT id FROM tags WHERE tag_type = " . CONFIG()->tag_types['General'] . " ORDER BY post_count DESC LIMIT 8"));
             if ($popular_tags)
-                $popular_tags = "AND pt.tag_id NOT IN (${popular_tags})";
+                $popular_tags = "AND pt.tag_id NOT IN ({$popular_tags})";
         }
 
         if ($type) {
@@ -344,7 +344,7 @@ class User extends Rails\ActiveRecord\Base
                 FROM posts_tags pt, post_votes v
                 WHERE v.user_id = {$this->id}
                 AND v.post_id = pt.post_id
-                ${popular_tags}
+                {$popular_tags}
                 GROUP BY pt.tag_id
                 ORDER BY sum DESC
                 LIMIT 6
