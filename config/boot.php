@@ -3,7 +3,7 @@
  * Working environment.
  */
 if (!defined('RAILS_ENV')) {
-    define('RAILS_ENV', 'production');
+    define('RAILS_ENV', 'development');
 }
 
 /**
