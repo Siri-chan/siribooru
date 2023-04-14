@@ -77,12 +77,43 @@ class SplPriorityQueue extends \SplPriorityQueue implements Serializable
     }
 
     /**
+     * Serialize
+     *
+     * @return string
+     */
+    public function __serialize()
+    {
+        $clone = clone $this;
+        $clone->setExtractFlags(self::EXTR_BOTH);
+
+        $data = [];
+        foreach ($clone as $item) {
+            $data[] = $item;
+        }
+
+        return serialize($data);
+    }
+
+    /**
      * Deserialize
      *
      * @param  string $data
      * @return void
      */
     public function unserialize($data)
+    {
+        foreach (unserialize($data) as $item) {
+            $this->insert($item['data'], $item['priority']);
+        }
+    }
+
+    /**
+     * Deserialize
+     *
+     * @param  string $data
+     * @return void
+     */
+    public function __unserialize($data)
     {
         foreach (unserialize($data) as $item) {
             $this->insert($item['data'], $item['priority']);
