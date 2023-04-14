@@ -1,0 +1,18 @@
+# Copy this to "database.yml" and adjust the fields accordingly.
+# Only works with mysql adapter.
+login: &login
+  adapter: mysql
+  host: 127.0.0.1
+# Oh no! I'm leaking the sensitive username and password of a local server's SQL database!
+# If this were ever to leave my LAN I'd be screwed! 
+# Be aware of this if you plan to host this outside of your Local Network.
+  username: moe
+  password: imouto
+
+development:
+  <<: *login
+  database: myimouto_dev
+
+production:
+  <<: *login
+  database: myimouto
