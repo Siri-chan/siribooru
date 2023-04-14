@@ -3,6 +3,8 @@
 Siribooru is a custom fork of MyImouto, specifically the Dec 21, 2021 ver of
 [MyImouto-plus](https://github.com/Yushe/myimouto-plus)
 
+I am *trying to* patch it to PHP 8.2
+
 
 ## Setup (Windows):
 ### Git
@@ -55,4 +57,4 @@ You may want to change the database usernames and passwords in `config/database.
 You will need to create a user for the `myimouto` database you created in phpmyadmin, unless you used the default credentials of root with no password.
 
 ### Finally setting up Siribooru
-Run `php setup.php`. Setup an admin account with username and password
+Run `php setup.php`. Setup an admin account with username and password. You might need to comment/uncomment DB creation if it's commented
