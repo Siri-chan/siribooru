@@ -18,10 +18,10 @@ class Parameters implements \IteratorAggregate
     private $files;
     
     private $routeVars = [];
-    
-    public function getIterator()
+
+    public function getIterator(): \Traversable
     {
-        return new ArrayIterator($this->toArray());
+        return new \ArrayIterator($this->toArray());
     }
     
     public function __construct()
@@ -191,7 +191,8 @@ class Parameters implements \IteratorAggregate
     {
         get_object_vars($this);
     }
-    
+
+    #[\ReturnTypeWillChange]
     public function toArray()
     {
         $obj_vars = get_object_vars($this);

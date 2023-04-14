@@ -254,7 +254,11 @@ final class Rails
 
         $e->error_data($extra_params);
 
-        throw $e;
+        if ($errno == E_WARNING || $errno == E_NOTICE || $errno == E_RECOVERABLE_ERROR || $errno == E_USER_NOTICE || $errno == E_USER_WARNING) {
+            echo $e;
+        } else {
+            throw $e;
+        }
     }
 
     static public function exceptionHandler($e)
