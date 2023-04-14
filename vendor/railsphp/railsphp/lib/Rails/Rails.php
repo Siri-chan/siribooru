@@ -243,7 +243,7 @@ final class Rails
         if (strpos($errfile, self::$path) === 0)
             $errfile = 'Rails' . substr($errfile, strlen(self::$path));
 
-        $extra_params = ['php_error' => true, 'errno' => $errno, 'errstr' => $errstr, 'errfile' => $errfile, 'errline' => $errline, 'errargs' => $errargs];
+        $extra_params = ['php_error' => true, 'errno' => $errno, 'errstr' => $errstr, 'errfile' => $errfile, 'errline' => $errline];
 
         if ($errtype)
             $errtype .= ': ';
