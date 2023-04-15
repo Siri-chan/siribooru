@@ -29,7 +29,7 @@ Change:
 - (on Line 701 by default) `post_max_size=300M`
 - (on Line 433 by default) `memory_limit=1024M`
 - (on line 994 by defualt) `date.timezone = Asia/Tokyo` (or your timezone)
-- (on lines 890-964) check that the `curl` and `pdo_mysql` extensions are enabled
+- (on lines 890-964) check that the `curl`, `gd` and `pdo_mysql` extensions are enabled
 If you want to be on a port other than 80; Change Line 60 of `./.xampp/apache/conf/httpd.conf` to reflect the port you want to listen on, then add a block at approximately line 280:
 
 ```

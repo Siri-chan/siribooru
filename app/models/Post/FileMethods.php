@@ -515,7 +515,7 @@ trait PostFileMethods
             return true;
         
         try {
-            Moebooru\Resizer::resize($this->file_ext, $path, $this->tempfile_sample_path(), $size, CONFIG()->sample_quality);
+            SiriBooru\Resizer::resize($this->file_ext, $path, $this->tempfile_sample_path(), $size, CONFIG()->sample_quality);
         } catch (Exception $e) {
             $this->errors()->add('sample', 'couldn\'t be created: '. $e->getMessage());
             return false;
@@ -541,7 +541,7 @@ trait PostFileMethods
             return true;
         }
         
-        $size = Moebooru\Resizer::reduce_to(array('width' => $this->width, 'height' => $this->height), array('width' => 300, 'height' => 300));
+        $size = SiriBooru\Resizer::reduce_to(array('width' => $this->width, 'height' => $this->height), array('width' => 300, 'height' => 300));
 
         # Generate the preview from the new sample if we have one to save CPU, otherwise from the image.
         if (is_file($this->tempfile_sample_path()))
@@ -556,7 +556,7 @@ trait PostFileMethods
             return false;
         
         try {
-            Moebooru\Resizer::resize($ext, $path, $this->tempfile_preview_path(), $size, 85);
+            SiriBooru\Resizer::resize($ext, $path, $this->tempfile_preview_path(), $size, 85);
         } catch (Exception $e) {
             $this->errors()->add("preview", "couldn't be generated (".$e->getMessage().")");
             $this->delete_tempfile();
