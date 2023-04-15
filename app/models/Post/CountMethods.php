@@ -1,7 +1,7 @@
 <?php
 trait PostCountMethods
 {
-    static public function fast_count($tags = null)
+    static public function fast_count($tags = "")
     {
         # A small sanitation
         $tags = preg_replace('/ +/', ' ', trim($tags));

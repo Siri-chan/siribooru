@@ -208,15 +208,15 @@ trait PostSqlMethods
         if (isset($q['exclude_pools'])) {
             foreach (array_keys($q['exclude_pools']) as $i) {
                 if (is_int($q['exclude_pools'][$i])) {
-                    $joins[] = "LEFT JOIN pools_posts ep${i} ON (ep${i}.post_id = p.id AND ep${i}.pool_id = ?)";
+                    $joins[] = "LEFT JOIN pools_posts ep{$i} ON (ep{$i}.post_id = p.id AND ep{$i}.pool_id = ?)";
                     $join_params[] = $q['exclude_pools'][$i];
-                    $conds[] = "ep${i}.id IS NULL";
+                    $conds[] = "ep{$i}.id IS NULL";
                 }
 
                 if (is_string($q['exclude_pools'][$i])) {
-                    $joins[] = "LEFT JOIN pools_posts ep${i} ON ep${i}.post_id = p.id LEFT JOIN pools epp${i} ON (ep${i}.pool_id = epp${i}.id AND LOWER(epp${i}.name) LIKE ?)";
+                    $joins[] = "LEFT JOIN pools_posts ep{$i} ON ep{$i}.post_id = p.id LEFT JOIN pools epp{$i} ON (ep{$i}.pool_id = epp{$i}.id AND LOWER(epp{$i}.name) LIKE ?)";
                     $join_params[] = "%".strtolower($q['exclude_pools'][$i])."%";
-                    $conds[] = "ep${i}.id IS NULL";
+                    $conds[] = "ep{$i}.id IS NULL";
                 }
             }
         }

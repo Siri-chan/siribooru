@@ -1,4 +1,4 @@
-<?php
+<?phpvali
 namespace Rails\ActionDispatch\Http;
 
 use Rails\Toolbox\ArrayTools;
@@ -14,6 +14,8 @@ class Parameters implements \IteratorAggregate
         # Parameters for request methods other than
         # delete, put, post, get, patchVars (need to support head requests).
         $other_params = [];
+    
+    private $page;
     
     private $files;
     

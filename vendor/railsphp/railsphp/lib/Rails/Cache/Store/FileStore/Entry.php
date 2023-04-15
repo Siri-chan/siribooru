@@ -30,7 +30,7 @@ class Entry
 
     protected $store;
 
-    public function __construct($key, array $params = [], $store)
+    public function __construct($key, $store, array $params = [])
     {
         $this->store = $store;
 
