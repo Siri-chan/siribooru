@@ -332,7 +332,7 @@ class Post extends Rails\ActiveRecord\Base
     # Added to avoid SQL constraint errors if parent_id passed isn't a valid post.
     protected function filter_parent_id()
     {
-        if (($parent_id = trim($this->parent_id)) && Post::where(['id' => $parent_id])->first())
+        if (($parent_id = trim($this->parent_id ?? '')) && Post::where(['id' => $parent_id])->first())
             $this->parent_id = $parent_id;
         else
             $this->parent_id = null;

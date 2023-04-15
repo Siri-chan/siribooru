@@ -86,7 +86,7 @@ class TagController extends ApplicationController
                 $query->where('name LIKE ?', '%' . str_replace('*', '%', $this->params()->name) . '%');
         }
 
-        if (ctype_digit($this->params()->type)) {
+        if (ctype_digit($this->params()->type ?? '')) {
             $this->params()->type = (int)$this->params()->type;
             $query->where('tag_type = ?', $this->params()->type);
         }

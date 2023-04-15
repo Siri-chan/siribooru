@@ -90,7 +90,7 @@ trait PostTagMethods
     # Returns the tags in a URL suitable string
     public function tag_title()
     {
-        return substr(preg_replace('/\W+/', '-', $this->cached_tags), 0, 50);
+        return substr(preg_replace('/\W+/', '-', $this->cached_tags ?? ''), 0, 50);
     }
 
     # Return the tags we display in URLs, page titles, etc.
@@ -117,7 +117,7 @@ trait PostTagMethods
     {
         $this->new_tags = array_filter(Tag::scan_tags($tags));
 
-        $current_tags = explode(' ', $this->cached_tags);
+        $current_tags = explode(' ', $this->cached_tags ?? '');
         
         if ($this->new_tags != $current_tags)
             $this->touch_change_seq();

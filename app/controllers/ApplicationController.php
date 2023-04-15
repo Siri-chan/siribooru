@@ -242,7 +242,7 @@ class ApplicationController extends Rails\ActionController\Base
         if ($this->params()->tags || (is_array($this->params()->post) && isset($this->params()->post['tags']))) {
             $post_tags = isset($this->params()->post['tags']) ? (string)$this->params()->post['tags'] : '';
             $tags = TagAlias::to_aliased(explode(' ', (strtolower($this->params()->tags ?: $post_tags))));
-            if ($recent_tags = trim($this->cookies()->recent_tags))
+            if ($recent_tags = trim($this->cookies()->recent_tags ?? ''))
                 $tags = array_merge($tags, explode(' ', $recent_tags));
             $this->cookies()->recent_tags = implode(" ", array_slice($tags, 0, 20));
         }

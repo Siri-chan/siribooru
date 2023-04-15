@@ -389,7 +389,7 @@ class SimilarImages
 
     static public function valid_saved_search($id)
     {
-        return (bool)preg_match('/\A[a-zA-Z0-9]{32}\.[a-z]+\Z/', $id);
+        return (bool)preg_match('/\A[a-zA-Z0-9]{32}\.[a-z]+\Z/', $id ?? '');
     }
 
     # Find a saved file.

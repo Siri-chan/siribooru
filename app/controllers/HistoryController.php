@@ -7,7 +7,7 @@ class HistoryController extends ApplicationController
     {
         $this->helper('Tag', 'Post');
         
-        $search = trim($this->params()->search) ?: "";
+        $search = trim($this->params()->search ?? '') ?: "";
 
         $q = [
             'keywords' => []
@@ -204,7 +204,7 @@ class HistoryController extends ApplicationController
         }
 
         $errors = [];
-        History::undo($this->changes, $this->current_user, $this->params()->redo == "1", $errors);
+        History::undo($this->changes, $this->current_user, $errors, $this->params()->redo == "1");
 
         $error_texts = [];
         $successful = 0;

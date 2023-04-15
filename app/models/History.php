@@ -52,7 +52,7 @@ class History extends Rails\ActiveRecord\Base
     }
     
     # Undo all changes in the array changes.
-    static public function undo($changes, $user, $redo_change = false, array &$errors)
+    static public function undo($changes, $user, array &$errors, $redo_change = false,)
     {
         # Save parent objects after child objects, so changes to the children are
         # committed when we save the parents.

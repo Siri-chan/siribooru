@@ -78,7 +78,7 @@ abstract class Helper extends ActionView
     
     public function u($str)
     {
-        return urlencode($str);
+        return urlencode($str ?? '');
     }
     
     public function hexEncode($str)
