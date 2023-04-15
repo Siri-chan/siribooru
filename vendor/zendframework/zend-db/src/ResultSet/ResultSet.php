@@ -94,7 +94,7 @@ class ResultSet extends AbstractResultSet
     /**
      * @return array|\ArrayObject|null
      */
-    public function current()
+    public function current(): mixed
     {
         $data = parent::current();
 

@@ -160,7 +160,7 @@ abstract class AbstractResultSet implements Iterator, ResultSetInterface
      *
      * @return void
      */
-    public function next()
+    public function next():void
     {
         if ($this->buffer === null) {
             $this->buffer = -2; // implicitly disable buffering from here on
@@ -176,7 +176,7 @@ abstract class AbstractResultSet implements Iterator, ResultSetInterface
      *
      * @return mixed
      */
-    public function key()
+    public function key(): mixed
     {
         return $this->position;
     }
@@ -186,7 +186,7 @@ abstract class AbstractResultSet implements Iterator, ResultSetInterface
      *
      * @return array | null
      */
-    public function current()
+    public function current(): mixed
     {
         if ($this->buffer === null) {
             $this->buffer = -2; // implicitly disable buffering from here on
@@ -205,7 +205,7 @@ abstract class AbstractResultSet implements Iterator, ResultSetInterface
      *
      * @return bool
      */
-    public function valid()
+    public function valid(): bool
     {
         if (is_array($this->buffer) && isset($this->buffer[$this->position])) {
             return true;
@@ -223,7 +223,7 @@ abstract class AbstractResultSet implements Iterator, ResultSetInterface
      *
      * @return void
      */
-    public function rewind()
+    public function rewind(): void
     {
         if (!is_array($this->buffer)) {
             if ($this->dataSource instanceof Iterator) {
@@ -240,7 +240,7 @@ abstract class AbstractResultSet implements Iterator, ResultSetInterface
      *
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         if ($this->count !== null) {
             return $this->count;
