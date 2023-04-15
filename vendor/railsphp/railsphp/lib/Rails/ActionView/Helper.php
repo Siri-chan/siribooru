@@ -100,7 +100,7 @@ abstract class Helper extends ActionView
     {
         $flags === null && $flags = ENT_COMPAT;
         !$charset && $charset = Rails::application()->config()->encoding;
-        return htmlspecialchars($str, $flags, $charset);
+        return htmlspecialchars($str ?? '', $flags, $charset);
     }
     
     public function I18n()

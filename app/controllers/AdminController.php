@@ -76,9 +76,9 @@ class AdminController extends ApplicationController
                 $keys[] = "stats/tags/level=" . $level . "&tags=" . $tag_count;
             }
             
-            $keys[] = "stats/page/level=${level}&page=0-10";
-            $keys[] = "stats/page/level=${level}&page=10-20";
-            $keys[] = "stats/page/level=${level}&page=20+";
+            $keys[] = "stats/page/level={$level}&page=0-10";
+            $keys[] = "stats/page/level={$level}&page=10-20";
+            $keys[] = "stats/page/level={$level}&page=20+";
         }
         
         $h = [];
@@ -99,9 +99,9 @@ class AdminController extends ApplicationController
                 $keys[] = "stats/tags/level=" . $level . "&tags=" . $tag_count;
             }
             
-            $keys[] = "stats/page/level=${level}&page=0-10";
-            $keys[] = "stats/page/level=${level}&page=10-20";
-            $keys[] = "stats/page/level=${level}&page=20+";
+            $keys[] = "stats/page/level={$level}&page=0-10";
+            $keys[] = "stats/page/level={$level}&page=10-20";
+            $keys[] = "stats/page/level={$level}&page=20+";
         }
         
         foreach ($keys as $key) {

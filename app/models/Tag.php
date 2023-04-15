@@ -21,7 +21,7 @@ class Tag extends Rails\ActiveRecord\Base
     static public function find_or_create_by_name($name)
     {
         # Reserve ` as a field separator for tag/summary.
-        $name = str_replace(array(' ', '`'), array('_', ''), ltrim((strtolower($name)), '-~'));
+        $name = str_replace(array(' ', '`'), array('_', ''), ltrim((strtolower($name??'')), '-~'));
         
         $ambiguous = false;
         $tag_type = CONFIG()->tag_types['General'];
@@ -57,7 +57,7 @@ class Tag extends Rails\ActiveRecord\Base
     /* } Parse methods { */
     static public function scan_query($query)
     {
-        return array_unique(array_filter(explode(' ', strtolower($query))));
+        return array_unique(array_filter(explode(' ', strtolower($query??''))));
     }
     
     static public function scan_tags($tags)

@@ -115,7 +115,7 @@ class DText
         if (preg_match('/\d/', end($state)) || preg_match('/^\*+\s+/', $str)) {
             return self::parselist($str, $state);
         } elseif (preg_match('/^(h[1-6])\.\s*(.+)\n*/', $str, $m)) {
-            return "<${m[1]}>${m[2]}</${m[1]}>";
+            return "<{$m[1]}>{$m[2]}</{$m[1]}>";
         } else {
             return $str;
         }

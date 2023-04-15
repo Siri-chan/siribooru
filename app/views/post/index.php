@@ -1,4 +1,4 @@
-<?php $this->provide('title', '/' . str_replace('_', ' ', $this->params()->tags)) ?>
+<?php $this->provide('title', '/' . str_replace('_', ' ', $this->params()->tags ?? '')) ?>
 <div id="post-list">
   <?php
     if ($this->tag_suggestions) :

@@ -351,12 +351,12 @@ class HistoryHelper extends Rails\ActionView\Helper
                             if (!$multiple_lines)
                                 $display = $text;
                             elseif ($show_diff)
-                                $display = "<div class='diff text-block'>${text}</div>";
+                                $display = "<div class='diff text-block'>{$text}</div>";
                             else
-                                $display = "<div class='initial-diff text-block'>${text}</div>";
+                                $display = "<div class='initial-diff text-block'>{$text}</div>";
 
                             if ($multiple_lines && !$show_in_detail)
-                                $html .= "<a onclick='$(this).hide(); $(this).next().show()' href='#'>(show changes)</a><div style='display: none;'>${display}</div>";
+                                $html .= "<a onclick='$(this).hide(); $(this).next().show()' href='#'>(show changes)</a><div style='display: none;'>{$display}</div>";
                             else
                                 $html .= $display;
                         }

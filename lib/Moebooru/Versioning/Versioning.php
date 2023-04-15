@@ -218,10 +218,10 @@ class Versioning
         // # Our schema doesn't allow us to apply single ON DELETE constraints, so use
         // # a rule to do it.  This is Postgresql-specific.
         // self::connection()->executeSql("
-          // CREATE OR REPLACE RULE delete_histories AS ON DELETE TO ${table_name}
+          // CREATE OR REPLACE RULE delete_histories AS ON DELETE TO {$table_name}
           // DO (
-            // DELETE FROM history_changes WHERE remote_id = OLD.id AND table_name = '${table_name}';
-            // DELETE FROM histories WHERE group_by_id = OLD.id AND group_by_table = '${table_name}';
+            // DELETE FROM history_changes WHERE remote_id = OLD.id AND table_name = '{$table_name}';
+            // DELETE FROM histories WHERE group_by_id = OLD.id AND group_by_table = '{$table_name}';
           // );
         // ");
         

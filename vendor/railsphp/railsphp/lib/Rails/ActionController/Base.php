@@ -180,14 +180,28 @@ abstract class Base extends ActionController
     {
         return $this->render_params || $this->redirect_params;
     }
-    
+
+    public function getLocal($name)
+    {
+        if (!$this->localExists($name)) {
+            throw new Exception\RuntimeException(
+                sprintf("Undefined local '%s'", $name)
+            );
+        }
+
+        if ($this->locals instanceof stdClass) {
+            return $this->locals->$name;
+        } else {
+            return $this->locals[$name];
+        }
+    }
+
     public function setLocal($name, $value)
     {
-        if (is_array($value)) {
-            $this->_array_names[] = $name;
-            $this->$name = $value;
-        } else {
+        if ($this->locals instanceof stdClass) {
             $this->locals->$name = $value;
+        } else {
+            $this->locals[$name] = $value;
         }
         return $this;
     }

@@ -3,7 +3,7 @@ class AdvertisementsHelper extends Rails\ActionView\Helper
 {
     public function print_advertisement($ad_type, $position = null, $center = false)
     {
-        $ad = Advertisement::random($ad_type, substr($position, 0, 1));
+        $ad = Advertisement::random($ad_type, substr($position ?? '', 0, 1));
         
         if ($ad) {
             if ($ad->html) {

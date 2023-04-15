@@ -1,6 +1,8 @@
 <?php
 class PostController extends ApplicationController
 {
+    # public $searching_pool, $tag_suggestions, $tags;
+
     public function activate()
     {
         $ids = is_array($this->params()->post_ids) ? array_map(function($id){return (int)$id;}, $this->params()->post_ids) : array();
@@ -353,7 +355,7 @@ class PostController extends ApplicationController
 
         $count = 0;
 
-        $this->set_title("/" . str_replace("_", " ", $tags));
+        $this->set_title("/" . str_replace("_", " ", $tags ?? ''));
 
         // try {
         $count = Post::fast_count($tags);

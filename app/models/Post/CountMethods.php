@@ -4,7 +4,7 @@ trait PostCountMethods
     static public function fast_count($tags = "")
     {
         # A small sanitation
-        $tags = preg_replace('/ +/', ' ', trim($tags));
+        $tags = preg_replace('/ +/', ' ', trim($tags??''));
         $cache_version = (int)Rails::cache()->read('$cache_version');
         $key = ['post_count' => $tags, 'v' => $cache_version];
 

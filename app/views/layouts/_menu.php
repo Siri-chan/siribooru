@@ -202,7 +202,7 @@
             <li><?= $this->linkTo($this->t(".help." . $item . "s"), "help#" . $item . "s", ['class' => ['help-item', $item]]) ?>
           <?php endforeach ?>
           <?php foreach (['wiki', 'forum'] as $item) : ?>
-            <li><?= $this->linkTo($this->t(".help.${item}"), "help#" . $item, ['class' => ['help-item', $item]]) ?>
+            <li><?= $this->linkTo($this->t(".help.{$item}"), "help#" . $item, ['class' => ['help-item', $item]]) ?>
           <?php endforeach ?>
           <li><?= $this->linkTo($this->t('.help.site'), "help#") ?></li>
         </ul>
