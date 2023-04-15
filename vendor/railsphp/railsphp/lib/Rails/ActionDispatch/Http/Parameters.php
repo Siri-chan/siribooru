@@ -1,4 +1,4 @@
-<?phpvali
+<?php
 namespace Rails\ActionDispatch\Http;
 
 use Rails\Toolbox\ArrayTools;
