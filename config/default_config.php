@@ -8,7 +8,7 @@ namespace MyImouto;
 abstract class DefaultConfig
 {
     # The name of this booru.
-    public $app_name    = 'siribooru';
+    public $app_name    = 'my.imouto';
 
     # Host name. Must not include scheme (i.e. http(s)://) nor trailing slash.
     public $server_host = '127.0.0.1:3000';
