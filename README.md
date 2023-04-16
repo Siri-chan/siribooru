@@ -12,6 +12,7 @@ It is untested elsewhere; be warned.
 ## Setup (Windows):
 ### Git
 Siribooru expects you to be able to `git clone` it to a folder locally. Look up how to use Git for windows.
+Do NOT forget to `--recurse-submodules`
 This guide expects it to be under `Y:/siribooru`
 ### XAMPP
 The first of this repository's ignored subfolders is `./.xampp`, which is designed to hold an XAMPP install on windows.
