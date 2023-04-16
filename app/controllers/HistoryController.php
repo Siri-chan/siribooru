@@ -152,9 +152,9 @@ class HistoryController extends ApplicationController
             'show_all_tags' => $this->params()->show_all_tags == "1",
             'specific_object' => (!empty($q['type']) and !empty($q['id'])),
             'specific_history' => !empty($q['change']),
+            'show_name' => false
         ];
         
-        $this->options['show_name'] = false;
         if ($this->type != "all") {
             $cn = $inflector->classify($this->type);
             try {

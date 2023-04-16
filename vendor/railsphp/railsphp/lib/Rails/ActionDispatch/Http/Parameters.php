@@ -74,7 +74,7 @@ class Parameters implements \IteratorAggregate
             if ($var)
                 ${$var}[$prop] = $value;
             else
-                $this->$prop = $value;
+                $this->other_params[$prop] = $value;
         }
     }
     
