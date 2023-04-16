@@ -7,7 +7,7 @@ I am *trying to* patch it to PHP 8.2
 
 I (intend to because PHP is a bitch) use this to manage my 'collection'. In past I have used MyImouto for this, with PHP 5, but I made the foolish error of updating PHP.
 This setup (on my system) is just running on my LAN, and is just used for organising and centralising my photos.
-
+It is untested elsewhere; be warned.
 
 ## Setup (Windows):
 ### Git
@@ -62,3 +62,6 @@ The database might be set to development. YUou may need to change it to "product
 
 ### Finally setting up Siribooru
 Run `php setup.php`. Setup an admin account with username and password. You might need to comment/uncomment DB creation if it's commented
+
+### Backups
+I suggest doing backups to a file using PHPMyAdmin regularly. This is best done by performing an SQL dump under Export.
