@@ -20,4 +20,6 @@ class LocalConfig extends DefaultConfig
     public $url_base    = 'http://127.0.0.1:80';
 
     public $admin_contact = 'siri1999kira@yahoo.co.jp';
+
+    public $starting_level = 20;
 }
