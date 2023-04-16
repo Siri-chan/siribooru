@@ -1,0 +1,3 @@
+[submodule "vendor/railsphp/railsphp"]
+	path = vendor/railsphp/railsphp
+	url = https://github.com/Siri-chan/railsphp.git
