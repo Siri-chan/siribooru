@@ -6,7 +6,7 @@ admin.login
 #/config/config.php
 #/config/database.yml
 /log/*
-/public/assets
+#/public/assets
 /public/data
 /tmp/*
 /vendor/*
