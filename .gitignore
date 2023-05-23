@@ -17,8 +17,8 @@ admin.login
 
 
 # Contains patched versions of railsphp and zend. THESE ARE REQUIRED TO COMPILE
-!/vendor/railsphp
-!/vendor/zendframework
-!/vendor/symfony
-!/vendor/michelf
+# !/vendor/railsphp
+# !/vendor/zendframework
+# !/vendor/symfony
+# !/vendor/michelf
 
